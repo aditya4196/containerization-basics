@@ -1,0 +1,20 @@
+cdPOST
+
+http://localhost:8080/
+
+Accept:application/json
+Content-Type:application/json
+
+{
+	"name" : "triangle",
+    "length" : 8.5,
+    "breadth" : 2.5,
+    "height" : 4.5
+}
+
+GET
+
+http://localhost:8080/1
+
+Accept:application/json
+Content-Type:application/json
