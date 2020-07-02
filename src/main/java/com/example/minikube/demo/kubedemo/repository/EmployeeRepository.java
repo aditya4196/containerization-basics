@@ -8,6 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +20,9 @@ import com.example.minikube.demo.kubedemo.model.Employee;
 public class EmployeeRepository {
 
 	private static Map<Long, Employee> empMap;
+	
+	@Value("${special.employee}")
+	private String specialEmployeeValue;
 	
 	@PostConstruct
 	public void init() {
@@ -59,6 +63,11 @@ public class EmployeeRepository {
 	public Employee save(Employee employee){
 		empMap.put(employee.getId(), employee);
 		return employee;
+	}
+
+	public String getSpecialEmployee() {
+		
+		return specialEmployeeValue;
 	}
 	
 }

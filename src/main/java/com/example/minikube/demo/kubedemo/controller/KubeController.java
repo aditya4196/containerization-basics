@@ -72,4 +72,9 @@ public class KubeController {
         response.put("deleted", Boolean.TRUE);
         return response;
     }
+    
+    @GetMapping("/specialEmp")
+    public String getSpecEmp() {
+        return employeeRepository.getSpecialEmployee();
+    }
 }
