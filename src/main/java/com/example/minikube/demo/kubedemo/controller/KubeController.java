@@ -73,8 +73,15 @@ public class KubeController {
         return response;
     }
     
-    @GetMapping("/specialEmp")
-    public String getSpecEmp() {
+    @GetMapping("/specialEmpCmap1")
+    public String getSpecEmp1() {
+    	String value = System.getenv().getOrDefault("SPECIAL_EMPLOYEE","No Special Employee");
+        return value;
+    }
+    
+    @GetMapping("/specialEmpCmap2")
+    public String getSpecEmp2() {
         return employeeRepository.getSpecialEmployee();
     }
+    
 }
