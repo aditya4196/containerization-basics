@@ -40,48 +40,16 @@ public class KubeController {
         return ResponseEntity.ok().body(employee);
     }
     
-    @PostMapping("/employees")
-    public Employee createEmployee(@Valid @RequestBody Employee employee) {
-        int totalEmployees = employeeRepository.findAll().size();
-        int newEmployeeId = totalEmployees + 1;
-        employee.setId(newEmployeeId);
-        return employeeRepository.save(employee);
-    }
-
-    @PutMapping("/employees/{id}")
-    public ResponseEntity<Employee> updateEmployee(@PathVariable(value = "id") Long employeeId,
-         @Valid @RequestBody Employee employeeDetails) throws ResourceNotFoundException {
-        Employee employee = employeeRepository.findById(employeeId);
-        if(Objects.isNull(employee))
-            throw new ResourceNotFoundException("Employee not found for this id :: " + employeeId);
-        employee.setEmailId(employeeDetails.getEmailId());
-        employee.setLastName(employeeDetails.getLastName());
-        employee.setFirstName(employeeDetails.getFirstName());
-        final Employee updatedEmployee = employeeRepository.save(employee);
-        return ResponseEntity.ok(updatedEmployee);
-    }
-
-    @DeleteMapping("/employees/{id}")
-    public Map<String, Boolean> deleteEmployee(@PathVariable(value = "id") Long employeeId)
-         throws ResourceNotFoundException {
-        Employee employee = employeeRepository.findById(employeeId);
-        		if(Objects.isNull(employee))
-        	          throw new ResourceNotFoundException("Employee not found for this id :: " + employeeId);
-        employeeRepository.delete(employee);
-        Map<String, Boolean> response = new HashMap<>();
-        response.put("deleted", Boolean.TRUE);
-        return response;
-    }
-    
-    @GetMapping("/specialEmpCmap1")
+    @GetMapping("/specialEmp")
     public String getSpecEmp1() {
     	String value = System.getenv().getOrDefault("SPECIAL_EMPLOYEE","No Special Employee");
         return value;
     }
     
-    @GetMapping("/specialEmpCmap2")
+    @GetMapping("/secretEmp")
     public String getSpecEmp2() {
-        return employeeRepository.getSpecialEmployee();
+    	String value = System.getenv().getOrDefault("SECRET_EMPLOYEE","No Secret Employee");
+    	return value;
     }
     
 }
