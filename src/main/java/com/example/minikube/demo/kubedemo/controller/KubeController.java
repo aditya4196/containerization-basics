@@ -51,5 +51,11 @@ public class KubeController {
     	String value = System.getenv().getOrDefault("SECRET_EMPLOYEE","No Secret Employee");
     	return value;
     }
+	
+    @GetMapping("/getVersion")
+    public String getVersionTwo() {
+    	String value = "New Version is Running";
+    	return value;
+    }
     
 }
