@@ -220,8 +220,8 @@ for config maps got to workloads-> config maps
 ### To create Blue Green Deployment
 
 
-* oc new-app adi4196/docker-service:v1 --name=blueversion
-* oc new-app adi4196/docker-service:v2 --name=greenversion
+* oc new-app adi4196/docker-demo:v1 --name=blueversion
+* oc new-app adi4196/docker-demo:v2 --name=greenversion
 
 * oc expose svc/blueversion --name=bluegreen
 
