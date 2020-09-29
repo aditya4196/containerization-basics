@@ -15,7 +15,7 @@
 # Commands to deploy docker image built above to openshift playground
 
 * For Openshift workshop we will use https://www.openshift.com/learn/courses/playground which has pre-configured Openshift Cluster
-* Tested image to use here **ashwinprakash/docker-service:1.0** or your own image which you may have just built
+* Tested image to use here **aditya4196/docker-service:1.0** or your own image which you may have just built
 
 ### Steps to Login and create Namespace in Openshift:
 * oc login -u **developer** -p **developer** 
@@ -23,7 +23,7 @@
 
 #### Pro Tip- use the **maximise button** to get a better experience of the console in openshift playground/katakoda
 ### To pull and run image in Openshift
-* oc new-app  ashwinprakash/docker-service:1.0
+* oc new-app  aditya4196/docker-service:1.0
 ### Check the status of the deployment you started
 * oc status
 
