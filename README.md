@@ -29,13 +29,14 @@ For Docker playground use https://labs.play-with-docker.com (avoid katakoda dock
 * docker rmi **image_id**
 
 ### To create a container from the image pulled
-* docker run -it -d **docker_userid**/docker-service:2.0
+* docker run -dp 8080:8080 **docker_userid**/docker-service:2.0
+#### open a new instance in the docker playground (option available in the left section) and hit curl command 'curl get localhost:8080/employees'
 
 ### To check running and exited containers
 * docker ps -a
 
-### To access the running container
-* docker exec -it **container_id** bash
+### To check the logs of the container
+* docker logs **container_id**
 
 ### To stop a running container
 * docker stop **container_id**
