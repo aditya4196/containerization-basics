@@ -2,7 +2,7 @@
 FROM openjdk:8-jdk-alpine
 
 # Add Maintainer Info
-LABEL maintainer="Anand Zaveri"
+LABEL maintainer="Aditya Jadhav"
 
 ENV APP_HOME=/usr/app/
 
