@@ -1,4 +1,5 @@
 # Commands for docker lab
+#### We are using a simple spring boot application for this demo, whose code is commited in this git repo for reference.
 For Docker playground use https://labs.play-with-docker.com (avoid katakoda docker playground for build due to memory and speed issues)
 
 ### To check the docker version installed
