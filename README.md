@@ -1,19 +1,49 @@
-#### For Docker playground use https://labs.play-with-docker.com (avoid katakoda docker playground for build due to memory and speed issues)
+# Commands for docker lab
+For Docker playground use https://labs.play-with-docker.com (avoid katakoda docker playground for build due to memory and speed issues)
 
-# Commands to build  docker image 
+### To check the docker version installed
+* docker -version
+
+### To list the running containers
+* docker ps
 
 ### to pull the git project and build the docker image
+#### Check the DockerFile used to build the image, in this project root location
 * git clone https://github.com/aditya4196/kube-docker-demo.git
 * cd kube-docker-demo
 * docker build --tag docker-service:1.0 .
 
-### To push built docker image to docker hub - pleaes replace dockerhub_userid with your userid e.g  ashwinprakash
+### To push built docker image to docker hub - please replace dockerhub_userid with your userid e.g  aditya4196
 * docker login -u=**dockerhub_userid** # your login to https://hub.docker.com/
 * docker tag docker-service:1.0 **dockerhub_userid**/docker-service:1.0
 * docker push **dockerhub_userid**/docker-service:1.0 
 
-# Commands to deploy docker image built above to openshift playground
+### To pull the image from the docker hub
+* docker pull **docker_userid**/docker-service:1.0 
 
+### To list down the locally stored images
+* docker images
+
+### To delete image from local registery
+* docker rmi **image_id**
+
+### To create a container from the image pulled
+* docker run -it -d **docker_userid**/docker-service:1.0
+
+### To check running and exited containers
+* docker ps -a
+
+### To access the running container
+* docker exec -it **container_id** bash
+
+### To stop a running container
+* docker stop **container_id**
+
+### To kill a running container
+* docker kill **container_id**
+
+
+# Commands for openshift lab
 * For Openshift workshop we will use https://www.openshift.com/learn/courses/playground which has pre-configured Openshift Cluster
 * Tested image to use here **aditya4196/docker-service:1.0** or your own image which you may have just built
 
