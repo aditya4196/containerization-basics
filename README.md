@@ -7,19 +7,19 @@ For Docker playground use https://labs.play-with-docker.com (avoid katakoda dock
 ### To list the running containers
 * docker ps
 
-### to pull the git project and build the docker image
+### To pull the git project and build the docker image
 #### Check the DockerFile used to build the image, in this project root location
 * git clone https://github.com/aditya4196/kube-docker-demo.git
 * cd kube-docker-demo
-* docker build --tag docker-service:1.0 .
+* docker build --tag docker-service:2.0 .
 
-### To push built docker image to docker hub - please replace dockerhub_userid with your userid e.g  aditya4196
+### To push built docker image to docker hub - please replace dockerhub_userid with your userid e.g  adi4196
 * docker login -u=**dockerhub_userid** # your login to https://hub.docker.com/
-* docker tag docker-service:1.0 **dockerhub_userid**/docker-service:1.0
-* docker push **dockerhub_userid**/docker-service:1.0 
+* docker tag docker-service:2.0 **dockerhub_userid**/docker-service:2.0
+* docker push **dockerhub_userid**/docker-service:2.0 
 
 ### To pull the image from the docker hub
-* docker pull **docker_userid**/docker-service:1.0 
+* docker pull **docker_userid**/docker-service:2.0 
 
 ### To list down the locally stored images
 * docker images
@@ -28,7 +28,7 @@ For Docker playground use https://labs.play-with-docker.com (avoid katakoda dock
 * docker rmi **image_id**
 
 ### To create a container from the image pulled
-* docker run -it -d **docker_userid**/docker-service:1.0
+* docker run -it -d **docker_userid**/docker-service:2.0
 
 ### To check running and exited containers
 * docker ps -a
@@ -45,13 +45,14 @@ For Docker playground use https://labs.play-with-docker.com (avoid katakoda dock
 
 # Commands for openshift lab
 * For Openshift workshop we will use https://www.openshift.com/learn/courses/playground which has pre-configured Openshift Cluster
-* Tested image to use here **aditya4196/docker-service:1.0** or your own image which you may have just built
+* Tested image to use here **adi4196/docker-service:2.0** or your own image which you may have just built
 
 ### Steps to Login and create Namespace in Openshift:
 * oc login -u **developer** -p **developer** 
 * oc new-project docker-app #you can skip this and ues the  default myproject as given in katakoda instructions 
 
 #### Pro Tip- use the **maximise button** to get a better experience of the console in openshift playground/katakoda
+#### In the git root location, you would also find an Openshift-Lab.pdf which has the steps using the Openshift UI platform
 ### To pull and run image in Openshift
 * oc new-app  aditya4196/docker-service:1.0
 ### Check the status of the deployment you started
