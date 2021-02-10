@@ -48,6 +48,7 @@ For Docker playground use https://labs.play-with-docker.com (avoid katakoda dock
 # Commands for openshift lab
 * For Openshift workshop we will use https://www.openshift.com/learn/courses/playground which has pre-configured Openshift Cluster
 * Tested image to use here **adi4196/docker-service:2.0** or your own image which you may have just built
+* https://www.katacoda.com/openshift/courses/playgrounds/openshift37
 
 ### Steps to Login and create Namespace in Openshift:
 * oc login -u **developer** -p **developer** 
