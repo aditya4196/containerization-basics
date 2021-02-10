@@ -57,7 +57,7 @@ For Docker playground use https://labs.play-with-docker.com (avoid katakoda dock
 #### Pro Tip- use the **maximise button** to get a better experience of the console in openshift playground/katakoda
 #### In the git root location, you would also find an Openshift-Lab.pdf which has the steps using the Openshift UI platform
 ### To pull and run image in Openshift
-* oc new-app  aditya4196/docker-service:1.0
+* oc new-app  adi4196/docker-service:1.0
 ### Check the status of the deployment you started
 * oc status
 
