@@ -10,7 +10,7 @@ For Docker playground use https://labs.play-with-docker.com (avoid katakoda dock
 
 ### To pull the git project and build the docker image
 #### Check the DockerFile used to build the image, in this project root location
-* git clone https://github.com/aditya4196/kube-docker-demo.git
+* git clone https://github.com/aditya4196/Containerization_Demo.git
 * cd kube-docker-demo
 * docker build --tag docker-service:2.0 .
 
